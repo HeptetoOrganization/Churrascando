@@ -1,20 +1,42 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
 
-export default function App() {
-  return (
+import {ActivityIndicator, View, Text, StyleSheet, Image} from 'react-native'
+
+export default function App(){
+  return(
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Image 
+        style={styles.img} 
+        source={require("./assets/logoChurras.png")}
+      />
+      <ActivityIndicator 
+        size={"large"}
+        color={"white"}
+        animating={true}
+        style={{
+            alignSelf: 'center',
+            position: 'absolute',
+            justifyContent: 'center',
+            paddingTop: 120
+        }}
+      />
+      <Text style={styles.title}>Churrascando</Text>
     </View>
-  );
+  )
 }
-
 const styles = StyleSheet.create({
-  container: {
+  container:{
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
+    backgroundColor: '#6A041D',
     justifyContent: 'center',
+    alignItems: 'center',
+    color: '#FFFFFF'
   },
-});
+  title:{
+    color: '#FFFFFF',
+    fontSize: 28,
+    display: "none"
+  },
+  img:{
+    position: "absolute"
+  }
+})

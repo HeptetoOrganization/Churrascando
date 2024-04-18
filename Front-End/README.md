@@ -1,5 +1,4 @@
-# Tarefandoo - TODO List
-Descrição... API
+# Churrascando
 
 ## 1. Criando:
 **No terminal:**

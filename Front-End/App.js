@@ -6,9 +6,9 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { PaperProvider } from 'react-native-paper';
 
-// Componetes telas
+// Componentes telas
 import LoadingScreen from './src/screens/Loading/index.js'
-import HomeScreen from './src/screens/Home/index.js'
+import HomeScreen from './src/screens/Inicio/index.js'
 import OrganizerScreen from './src/screens/Organizador/index.js'
 import MeatScreen from './src/screens/Carnes/index.js'
 import DrinksScreen from './src/screens/Bebidas/index.js'

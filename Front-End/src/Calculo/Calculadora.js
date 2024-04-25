@@ -167,5 +167,7 @@ export default function Calculadora ({ Homem, Mulher, Crianca, Carne, Acompanham
 
     const valorAdulto = valorTotal/Adulto // Variavel que calcula o rateio por pessoa
 
-    return(valorAdulto, valorTotal, valorTotalC, valorTotalA, valorTotalB, valorTotalO, valorTotalL)
+    return(
+        valorAdulto, valorTotal, valorTotalC, valorTotalA, valorTotalB, valorTotalO, valorTotalL
+    )
 }

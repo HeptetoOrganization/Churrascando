@@ -20,8 +20,15 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 // inserção de área segura do dispositivo para Android e iOS.
 
 import * as S from './style.js'
+import GuestComponent from '../../components/GuestComponent/index.js';
 
-const OrganizerScreen = () => {
+const OrganizerScreen = ({navigation}) => {
+
+  const source = {
+    mulher: require('../../assets/mulher.png'),
+    homem: require('../../assets/homem.png'),
+    criancas: require('../../assets/criancas.png'),
+  }
     return (
     
         <SafeAreaProvider style={S.stylesOrganizerScreen.container}>
@@ -39,6 +46,9 @@ const OrganizerScreen = () => {
           {/* Convidados */}
           <View style={S.stylesField.container}>
           <Text style={S.stylesField.title}>Convidados:</Text>
+            <GuestComponent src={source.homem} text={'homem'} value={'Hi'}/>
+            <GuestComponent src={source.mulher} text={'Mulher'} value={'Hi'}/>
+            <GuestComponent src={source.criancas} text={'criancas'} value={'Hi'}/>
           </View>
 
           {/* Locação */}
@@ -47,7 +57,7 @@ const OrganizerScreen = () => {
           </View>
     
           <View style={S.stylesViewNext.container}>
-            <Pressable style={S.stylesPressableNext.container}onPress={() => navigation.navigate('Organizador')}>
+            <Pressable style={S.stylesPressableNext.container}onPress={() => navigation.navigate('Carnes')}>
               <Text style={S.stylesPressableNext.text}>{'>'}</Text>
             </Pressable>
           </View>

@@ -53,6 +53,14 @@ export const stylesPressableStart = StyleSheet.create({
     } 
 })
 
+export const stylesCheck = StyleSheet.create({
+    checkbox: {
+        alignSelf: 'center',
+      },
+})
+
+
+
 // Botão Lixeira Delete
 // export const stylesButtonDelete = StyleSheet.create({
 //     button: {

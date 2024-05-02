@@ -13,6 +13,7 @@ import {
   ScrollView,
   Alert,
   Button,
+  
 } from 'react-native';
 
 
@@ -21,7 +22,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import * as S from './style.js'
 
-const OrganizerScreen = () => {
+const OrganizerScreen = ({navigation}) => {
     return (
     
         <SafeAreaProvider style={S.stylesOrganizerScreen.container}>
@@ -47,7 +48,7 @@ const OrganizerScreen = () => {
           </View>
     
           <View style={S.stylesViewNext.container}>
-            <Pressable style={S.stylesPressableNext.container}onPress={() => navigation.navigate('Organizador')}>
+            <Pressable style={S.stylesPressableNext.container}onPress={() => navigation.navigate('Carnes')}>
               <Text style={S.stylesPressableNext.text}>{'>'}</Text>
             </Pressable>
           </View>

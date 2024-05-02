@@ -94,3 +94,10 @@ export const theme = {
 
 
 ## 3. Navegação entre telas
+`// App.js e criando as funções das telas`
+
+## 4. Tela Loading
+
+## 5. Tela Início
+
+## 6. Tela Organizador

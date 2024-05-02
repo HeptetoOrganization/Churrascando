@@ -29,7 +29,7 @@ export default function App() {
     // </NavigationContainer>
 
   <NavigationContainer>
-    <Stack.Navigator initialRouteName="Loading">
+    <Stack.Navigator initialRouteName="Início">
       <Stack.Screen name="Loading" component={LoadingScreen} />
       <Stack.Screen name="Início" component={HomeScreen}/>
       <Stack.Screen name="Organizador" component={OrganizerScreen} />

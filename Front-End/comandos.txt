@@ -1,9 +1,0 @@
-# Instalando expo
-npm install --global expo-cli
-
-## criando app
-npx create-expo-app churras <--(nome do app)
-
-## Startar app
-npx expo start --tunnel
-

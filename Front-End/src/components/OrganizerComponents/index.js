@@ -11,7 +11,7 @@ import * as S from './style.js'
 import React, { useState } from 'react';
 
 
-export default function GuestComponent({src, text, value, maxLen, inputMode}) {
+export default function OrganizerComponents({text, width, maxLen, textTransform, inputMode}) {
 
   const [inputValue, setInputValue] = useState('');
 
@@ -21,22 +21,21 @@ export default function GuestComponent({src, text, value, maxLen, inputMode}) {
 
  return (
     <View style={S.stylesComponent.container}>
-      <View style={S.stylesComponent.viewImage}>
-        <Image source={src} style={S.stylesComponent.image}/>
+      <View style={S.stylesComponent.viewText}>
         <Text style={S.stylesComponent.text}>{text}</Text>
       </View>
 
-      <View style={S.stylesComponent.viewInput}>
+      <View style={[S.stylesComponent.viewInput, { width }]}>
         <TextInput
           value={inputValue}
           onChangeText={handleChange}
-          style={S.stylesComponent.input}
+          style={[S.stylesComponent.input, { textTransform }]}
           maxLength={maxLen}
           inputMode={inputMode}
           required
         />
       </View>
-       {/* <Text>{inputValue}</Text> */}
+      {/* <Text>{inputValue}</Text> */}
     </View>
  )
 }

@@ -14,27 +14,23 @@ export const stylesComponent = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
     },
-    viewImage: {
+    viewText: {
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
         gap: 15,
     },
-    image:{
-        height:40,
-        width:40,
-    },
     // titulo
     text: {
-        color: theme.colors.white, // cor da fonte
-        fontFamily: theme.font_family.regular, // fonte
-        fontSize: theme.font_size.sm, // tamanho da fonte
+        color: theme.colors.white,
+        fontFamily: theme.font_family.regular,
+        fontSize: theme.font_size.sm,
  
         textAlign: 'left',
     },
     viewInput: {
         display: 'flex',
-        width: '35%',
+        //width: '51%',
         height: 40,
         paddingHorizontal: 8,
 
@@ -43,9 +39,9 @@ export const stylesComponent = StyleSheet.create({
         justifyContent: 'center',
     },
     input: {
-        color: theme.colors.white, // cor da fonte
-        fontFamily: theme.font_family.regular, // fonte
-        fontSize: theme.font_size.md, // tamanho da fonte
+        color: theme.colors.white,
+        fontFamily: theme.font_family.regular,
+        fontSize: theme.font_size.md,
  
         textAlign: 'center',
     },

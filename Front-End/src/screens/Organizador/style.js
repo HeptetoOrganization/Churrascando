@@ -5,10 +5,8 @@ export const stylesOrganizerScreen = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.ginger_cream,
-        padding: theme.spacing.lg, // espaçamento entre os componentes internos
-
-        //alignItems: 'center', 
-        //justifyContent: 'space-evenly', // alinhamento dos itens
+        padding: theme.spacing.lg,
+        paddingBottom: 60,
     },
 
 })
@@ -26,10 +24,7 @@ export const stylesField = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.ginger_cream,
-        padding: theme.spacing.lg, // espaçamento entre os componentes internos
-
-        //alignItems: 'center', 
-        //justifyContent: 'space-evenly', // alinhamento dos itens
+        marginBottom: theme.spacing.md,
     },
     title: {
         fontFamily: theme.font_family.regular,
@@ -68,15 +63,6 @@ export const stylesViewNext = StyleSheet.create({
 })
 export const stylesPressableNext = StyleSheet.create({
     container: {
-        // position: 'absolute',
-        // //marginBottom: theme.spacing.lg,
-        // bottom: 20,
-
-        // backgroundColor: theme.colors.marquis_orange,
-        // paddingVertical: theme.spacing.xs,
-        // width: 50,
-        // //height: 50,
-        // borderRadius: '100%',
         justifyContent: 'center',
     },
     text: {

@@ -9,6 +9,7 @@ Descrição... API
 - [x] Para as áreas seguras: `npm install react-native-safe-area-context`
 - [x] Fonte Karla: `npx expo install expo-font @expo-google-fonts/karla`
 - [x] React Native Paper: `npm install react-native-paper`
+- [x] Ícones:`npm install lucide-react-native`
 - [x] Native Stack Navigator: `npm install @react-navigation/native-stack`
 
 - [x] Rodando: `npx expo start` ou `npx expo start --tunnel`

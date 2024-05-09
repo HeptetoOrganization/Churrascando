@@ -66,9 +66,6 @@ export const stylesPressableNext = StyleSheet.create({
         justifyContent: 'center',
     },
     text: {
-        fontFamily: theme.font_family.regular,
-        fontSize: theme.font_size.xl,
-        color: theme.colors.white,
         textAlign: 'center',
     } 
 })

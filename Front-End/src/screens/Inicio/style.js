@@ -52,30 +52,3 @@ export const stylesPressableStart = StyleSheet.create({
         textAlign: 'center',
     } 
 })
-
-// Botão Lixeira Delete
-// export const stylesButtonDelete = StyleSheet.create({
-//     button: {
-//         //borderRadius: theme.borderRadius.button,
-//     },
-//     image:{
-//     //resizeMode: 'contain',
-//         height:25, 
-//         width:25,
-//     },
-
-//     // ios
-//     shadowProp: {
-//         shadowColor: '#171717',
-//         shadowOffset: {width: -2, height: 4},
-//         shadowOpacity: 0.2,
-//         shadowRadius: 3,
-//     },    
-// })
-// //    |
-// // Botões
-// export const stylesButtonImage = StyleSheet.create({
-//     // padding:{
-//     // paddingLeft: theme.spacing.sm,
-//     // },   
-// })

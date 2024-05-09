@@ -8,7 +8,7 @@ import {
 
 import * as S from './style.js'
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 
 export default function GuestComponent({src, text, value, maxLen, inputMode}) {

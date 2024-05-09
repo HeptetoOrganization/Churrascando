@@ -2,13 +2,12 @@ import {
   Text, 
   View, 
   TextInput, 
-  Image,
   Alert,
 } from 'react-native';
 
 import * as S from './style.js'
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 
 export default function OrganizerComponents({text, width, maxLen, textTransform, inputMode}) {

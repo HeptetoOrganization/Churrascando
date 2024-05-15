@@ -5,7 +5,7 @@ import {
   View, 
 } from 'react-native';
 
-//import * as S from './style.js'
+import * as S from './style.js'
 import { ToggleButton } from 'react-native-paper';
 //import { theme } from '../../theme/index.js';
 
@@ -26,7 +26,8 @@ export default function SelectItem({}) {
       };
 
       return(
-        <View>
+        <View style={S.stylesComponent.container}>
+          <View style={S.stylesComponent.buttons}>
             <ToggleButton
                 icon="bluetooth"
                 value="bluetooth"
@@ -39,6 +40,22 @@ export default function SelectItem({}) {
                 status={bebidas.includes("camera") ? 'checked' : 'unchecked'}
                 onPress={() => onButtonToggle("camera")}
             />
+          </View>
+          
+          <View style={S.stylesComponent.buttons}>
+            <ToggleButton
+                icon="bluetooth"
+                value="bluetooth"
+                status={bebidas.includes("bluetooth") ? 'checked' : 'unchecked'}
+                onPress={() => onButtonToggle("bluetooth")}
+            />
+            <ToggleButton
+                icon="camera"
+                value="camera"
+                status={bebidas.includes("camera") ? 'checked' : 'unchecked'}
+                onPress={() => onButtonToggle("camera")}
+            />
+          </View>
             <Text>Selecionados: {bebidas.join(', ')}</Text>
         </View>
       )

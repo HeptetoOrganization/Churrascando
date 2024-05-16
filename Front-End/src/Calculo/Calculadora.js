@@ -43,8 +43,8 @@ export default function Calculadora ({ Homem, Mulher, Crianca, Carne, Acompanham
     const kgCarvao = kgCarne * 1.3 // 1 kg de carne para 1,3 kg de carvão - em média
     const kgSalG = kgCarne * 0.018 // 1 kg de carne para 18 g de sal grosso - em média
 
-    var tiposB = Bebida.length
-    var bAlcolicas = 0
+    let tiposB = Bebida.length
+    let bAlcolicas = 0
 
     if(Bebida.include("Cerveja", undefined)){ // Calculo das bebidas alcolicas
         tiposB -=1
@@ -71,46 +71,65 @@ export default function Calculadora ({ Homem, Mulher, Crianca, Carne, Acompanham
     const tArroz = 0.1 * pessoa // 100 gramas de arroz por pessoa
     const tQueijo = 0.043 * pessoa // 43 gramas de queijo coalho (1 espeto) por pessoa
 
-    const valorTotal = 0 // Variavel que calcula o total da soma de todos os itens
-    const valorTotalC= 0 // Variavel que calcula o total da carne
-    const valorTotalB = 0 // Variavel que calcula o total das bebidas
-    const valorTotalA = 0 // Variavel que calcula o total dos acompanhamentos
-    const valorTotalO = 0 // Variavel que calcula o total dos outros
-    const valorTotalL = 0 // Variavel que armazena o valor da locação
+    let valorTotal = 0 // Variavel que calcula o total da soma de todos os itens
+    let valorTotalC= 0 // Variavel que calcula o total da carne
+    let valorTotalB = 0 // Variavel que calcula o total das bebidas
+    let valorTotalA = 0 // Variavel que calcula o total dos acompanhamentos
+    let valorTotalO = 0 // Variavel que calcula o total dos outros
+    let valorTotalL = 0 // Variavel que armazena o valor da locação
+
+    let kgBoi = 0 // Variavel que armazena os kg da carne de boi
+    let kgFrango = 0 // Variavel que armazena os kg da carne de frango
+    let kgPorco = 0 // Variavel que armazena os kg da carne de porco
+
+    let mlAgua = 0 // Variavel que armazena os ml da agua
+    let mlSuco = 0 // Variavel que armazena os ml do suco
+    let mlRefri = 0 // Variavel que armazena os ml do refrigerante
+    let mlCerveja = 0 // Variavel que armazena os ml da cerveja
+
 
     // CARNES
     for(let i = 0; i <= Carne.length; i++){
         // BOVINA
         if("Picanha" == Carne[i]){
             valorTotalC += (kgCarne.toFixed(2) * 130.89);
+            kgBoi += kgCarne
         }
         if("Contra Filé" == Carne[i]){
             valorTotalC += (kgCarne.toFixed(2) * 49.99);
+            kgBoi += kgCarne
         }
         if("Coxão Mole" == Carne[i]){
             valorTotalC += (kgCarne.toFixed(2) * 36.98);
+            kgBoi += kgCarne
         }
 
         // FRANGO
         if("Asa" == Carne[i]){
             valorTotalC += (kgCarne.toFixed(2) * 13.99);
+            kgFrango += kgCarne
         }
         if("Coxa" == Carne[i]){
             valorTotalC += (kgCarne.toFixed(2) * 10.99);
+            kgFrango += kgCarne
         }
         if("Coração" == Carne[i]){
             valorTotalC += (kgCarne.toFixed(2) * 70.99);
+            kgFrango += kgCarne
         }
 
         // SUÍNA
         if("Linguiça" == Carne[i]){
             valorTotalC += (kgCarne.toFixed(2) * 14.99);
+            kgPorco += kgCarne
         }
         if("Bisteca" == Carne[i]){
             valorTotalC += (kgCarne.toFixed(2) * 16,98);
+            kgPorco += kgCarne
         }
         if("Costela" == Carne[i]){
             valorTotalC += (kgCarne.toFixed(2) * 26.98);
+            kgPorco += kgCarne
         }
     }
 
@@ -118,15 +137,19 @@ export default function Calculadora ({ Homem, Mulher, Crianca, Carne, Acompanham
     for(let i = 0; i <= Bebida.length; i++){
         if("Água" == Bebida[i]){
             valorTotalB += (bPessoa.toFixed(2) * 13.32);
+            mlAgua += bPessoa
         }
         if("Refrigerante" == Bebida[i]){
             valorTotalB += (bPessoa.toFixed(2) * 6.5);
+            mlRefri += bPessoa
         }
         if("Suco" == Bebida[i]){
             valorTotalB += (bPessoa.toFixed(2) * 4.69);
+            mlSuco += bPessoa
         }
         if("Cerveja" == Bebida[i]){
             valorTotalB += (bAdulto.toFixed(2) * 19.4);
+            mlCerveja += bPessoa
         }
     }
 
@@ -167,5 +190,5 @@ export default function Calculadora ({ Homem, Mulher, Crianca, Carne, Acompanham
 
     const valorAdulto = valorTotal/Adulto // Variavel que calcula o rateio por pessoa
 
-    return(valorAdulto, valorTotal, valorTotalC, valorTotalA, valorTotalB, valorTotalO, valorTotalL)
+    return(valorAdulto, valorTotal, valorTotalC, valorTotalA, valorTotalB, valorTotalO, valorTotalL, kgBoi, kgFrango, kgPorco, kgGelo, kgSalG, kgCarvao, mlAgua, mlCerveja, mlRefri, mlSuco, tArroz, tFarofa, tPao, tPaoAlho, tQueijo)
 }

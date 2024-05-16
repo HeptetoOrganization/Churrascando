@@ -62,8 +62,8 @@ const MeatScreen = ({navigation}) => {
                                 <View style={S.stylesCheckItem.container}>
                                     <Checkbox.Item
                                         // label="Picanha"
-                                        status={carne.includes('picanha') ? 'checked' : 'unchecked'}
-                                        onPress={() => handleCheckboxPress('picanha')}
+                                        status={carne.includes('Picanha') ? 'checked' : 'unchecked'}
+                                        onPress={() => handleCheckboxPress('Picanha')}
                                         color={theme.colors.marquis_orange}
                                     />
                                     <Text style={S.stylesCheckItem.text}>Picanha</Text>
@@ -71,8 +71,8 @@ const MeatScreen = ({navigation}) => {
                                 <View style={S.stylesCheckItem.container}>
                                     <Checkbox.Item
                                         // label="Contra Filé"
-                                        status={carne.includes('contra') ? 'checked' : 'unchecked'}
-                                        onPress={() => handleCheckboxPress('contra')}
+                                        status={carne.includes('Contra Filé') ? 'checked' : 'unchecked'}
+                                        onPress={() => handleCheckboxPress('Contra Filé')}
                                         color={theme.colors.marquis_orange}
                                     />
                                     <Text style={S.stylesCheckItem.text}>Contra Filé</Text>
@@ -80,8 +80,8 @@ const MeatScreen = ({navigation}) => {
                                 <View style={S.stylesCheckItem.container}>
                                     <Checkbox.Item
                                         // label="Coxão Mole"
-                                        status={carne.includes('coxao-m') ? 'checked' : 'unchecked'}
-                                        onPress={() => handleCheckboxPress('coxao-m')}
+                                        status={carne.includes('Coxão Mole') ? 'checked' : 'unchecked'}
+                                        onPress={() => handleCheckboxPress('Coxão Mole')}
                                         color={theme.colors.marquis_orange}
                                     />
                                     <Text style={S.stylesCheckItem.text}>Coxão Mole</Text>
@@ -97,8 +97,8 @@ const MeatScreen = ({navigation}) => {
                                 <View style={S.stylesCheckItem.container}>
                                     <Checkbox.Item
                                         // label="Asa"
-                                        status={carne.includes('asa') ? 'checked' : 'unchecked'}
-                                        onPress={() => handleCheckboxPress('asa')}
+                                        status={carne.includes('Asa') ? 'checked' : 'unchecked'}
+                                        onPress={() => handleCheckboxPress('Asa')}
                                         color={theme.colors.marquis_orange}
                                     />
                                     <Text style={S.stylesCheckItem.text}>Asa</Text>
@@ -106,8 +106,8 @@ const MeatScreen = ({navigation}) => {
                                 <View style={S.stylesCheckItem.container}>
                                     <Checkbox.Item
                                         // label="Coxa"
-                                        status={carne.includes('coxa') ? 'checked' : 'unchecked'}
-                                        onPress={() => handleCheckboxPress('coxa')}
+                                        status={carne.includes('Coxa') ? 'checked' : 'unchecked'}
+                                        onPress={() => handleCheckboxPress('Coxa')}
                                         color={theme.colors.marquis_orange}
                                     />
                                     <Text style={S.stylesCheckItem.text}>Coxa</Text>
@@ -115,8 +115,8 @@ const MeatScreen = ({navigation}) => {
                                 <View style={S.stylesCheckItem.container}>
                                     <Checkbox.Item
                                         // label="Coração"
-                                        status={carne.includes('coracao') ? 'checked' : 'unchecked'}
-                                        onPress={() => handleCheckboxPress('coracao')}
+                                        status={carne.includes('Coração') ? 'checked' : 'unchecked'}
+                                        onPress={() => handleCheckboxPress('Coração')}
                                         color={theme.colors.marquis_orange}
                                     />
                                     <Text style={S.stylesCheckItem.text}>Coração</Text>
@@ -132,8 +132,8 @@ const MeatScreen = ({navigation}) => {
                                 <View style={S.stylesCheckItem.container}>
                                     <Checkbox.Item
                                         // label="Linguiça"
-                                        status={carne.includes('linguica') ? 'checked' : 'unchecked'}
-                                        onPress={() => handleCheckboxPress('linguica')}
+                                        status={carne.includes('Linguiça') ? 'checked' : 'unchecked'}
+                                        onPress={() => handleCheckboxPress('Linguiça')}
                                         color={theme.colors.marquis_orange}
                                     />
                                     <Text style={S.stylesCheckItem.text}>Linguiça</Text>
@@ -141,8 +141,8 @@ const MeatScreen = ({navigation}) => {
                                 <View style={S.stylesCheckItem.container}>
                                     <Checkbox.Item
                                         // label="Bisteca"
-                                        status={carne.includes('bisteca') ? 'checked' : 'unchecked'}
-                                        onPress={() => handleCheckboxPress('bisteca')}
+                                        status={carne.includes('Bisteca') ? 'checked' : 'unchecked'}
+                                        onPress={() => handleCheckboxPress('Bisteca')}
                                         color={theme.colors.marquis_orange}
                                     />
                                     <Text style={S.stylesCheckItem.text}>Bisteca</Text>
@@ -150,8 +150,8 @@ const MeatScreen = ({navigation}) => {
                                 <View style={S.stylesCheckItem.container}>
                                     <Checkbox.Item
                                         // label="Costela"
-                                        status={carne.includes('costela') ? 'checked' : 'unchecked'}
-                                        onPress={() => handleCheckboxPress('costela')}
+                                        status={carne.includes('Costela') ? 'checked' : 'unchecked'}
+                                        onPress={() => handleCheckboxPress('Costela')}
                                         color={theme.colors.marquis_orange}
                                     />
                                     <Text style={S.stylesCheckItem.text}>Costela</Text>

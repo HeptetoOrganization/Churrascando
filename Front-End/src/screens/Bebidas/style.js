@@ -20,8 +20,11 @@ export const stylesMainTitle = StyleSheet.create({
     },
 })
 
-export const stylesField = StyleSheet.create({
+export const stylesOptions = StyleSheet.create({
     container: {
+        flex: 1,
+        backgroundColor: theme.colors.ginger_cream,
+        marginBottom: theme.spacing.md,
     },
     title: {
         fontFamily: theme.font_family.regular,
@@ -32,7 +35,21 @@ export const stylesField = StyleSheet.create({
     },
 
 })
+export const stylesField = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: theme.colors.ginger_cream,
+        marginBottom: theme.spacing.md,
+    },
+    title: {
+        fontFamily: theme.font_family.regular,
+        fontSize: theme.font_size.lg,
+        color: theme.colors.chinese_black,
+        marginBottom: theme.spacing.lg,
+        textAlign: 'left',
+    },
 
+})
 
 
 // Botão próxima tela

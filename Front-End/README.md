@@ -15,7 +15,10 @@ Descrição...
 
 - [x] Rodando: `npx expo start` ou `npx expo start --tunnel`
 
-
+- [x] atualaizar expo: 
+- `npm install expo@latest`
+- `npm install expo@51`
+- `npx expo install --fix`
 
 
 

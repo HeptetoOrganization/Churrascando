@@ -15,11 +15,12 @@ Descrição...
 
 - [x] Rodando: `npx expo start` ou `npx expo start --tunnel`
 
-- [x] atualaizar expo: 
+- [x] atualaizar expo:
+- `npm uninstall expo-cli`
+- `npm install expo-cli`
 - `npm install expo@latest`
 - `npm install expo@51`
 - `npx expo install --fix`
-
 
 
 ## 2. Estruturando os aqruivos:

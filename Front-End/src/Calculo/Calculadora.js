@@ -1,4 +1,7 @@
-export default function Calculadora ({ Homem, Mulher, Crianca, Carne, Acompanhamento, Bebida, Outros, Locacao }){
+import Organizador from "../screens/Organizador"
+
+
+export default function Calculadora ({Homem, Mulher, Crianca, Carne, Acompanhamento, Bebida, Outros, Locacao }){
     /*  CARNES (Valores por kg)
                 BOVINA
                     Picanha             R$ 130,89
@@ -72,7 +75,7 @@ export default function Calculadora ({ Homem, Mulher, Crianca, Carne, Acompanham
     const tQueijo = 0.043 * pessoa // 43 gramas de queijo coalho (1 espeto) por pessoa
 
     const valorTotal = 0 // Variavel que calcula o total da soma de todos os itens
-    const valorTotalC= 0 // Variavel que calcula o total da carne
+    const valorTotalC = 0 // Variavel que calcula o total da carne
     const valorTotalB = 0 // Variavel que calcula o total das bebidas
     const valorTotalA = 0 // Variavel que calcula o total dos acompanhamentos
     const valorTotalO = 0 // Variavel que calcula o total dos outros
@@ -167,5 +170,13 @@ export default function Calculadora ({ Homem, Mulher, Crianca, Carne, Acompanham
 
     const valorAdulto = valorTotal/Adulto // Variavel que calcula o rateio por pessoa
 
-    return(valorAdulto, valorTotal, valorTotalC, valorTotalA, valorTotalB, valorTotalO, valorTotalL)
+    return(
+        valorAdulto, 
+        valorTotal, 
+        valorTotalC, 
+        valorTotalA, 
+        valorTotalB, 
+        valorTotalO, 
+        valorTotalL
+    )
 }

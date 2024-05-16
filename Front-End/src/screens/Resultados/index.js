@@ -5,7 +5,8 @@ import {
     ScrollView,
     Alert,
 } from 'react-native';
-  
+
+import Calculadora from '../../Calculo/Calculadora.js';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 // inserção de área segura do dispositivo para Android e iOS.
   
@@ -16,7 +17,16 @@ import * as S from './style.js'
 
 import ResultItem from '../../components/ResultItem/index.js';
 
-const ResultsScreen = () => {
+const ResultsScreen = ({navigation, Calculadora}) => {
+    const [
+        valorAdulto,
+        valorTotal,
+        valorTotalC,
+        valorTotalA,
+        valorTotalB,
+        valorTotalO,
+        valorTotalL
+    ] = Calculadora({ /* Passar os parâmetros necessários para a calculadora */ });
 
     const source = {
         // Carnes
@@ -62,7 +72,7 @@ const ResultsScreen = () => {
             {/* Tipo de carne */}
             <View style={S.stylesField.container}>
                 <Text style={S.stylesField.title}>Tipo de carne:</Text>
-                <ResultItem width={'35%'} value={'pessoas bebem?'} src={source.agua}/>
+                <ResultItem width={'35%'} value={'pessoas bebem?'+ valorAdulto} src={source.agua}/>
             </View>
 
             {/* Acompanhamentos: */}

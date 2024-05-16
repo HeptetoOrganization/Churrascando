@@ -1,5 +1,5 @@
-# Tarefandoo - TODO List
-Descrição... API
+# Churrascando - Calculadora de churrasco
+Descrição...
 
 ## 1. Criando:
 **No terminal:**
@@ -10,13 +10,18 @@ Descrição... API
 - [x] Fonte Karla: `npx expo install expo-font @expo-google-fonts/karla`
 - [x] React Native Paper: `npm install react-native-paper`
 - [x] Ícones:`npm install lucide-react-native`
-- [x] Native Stack Navigator: `npm install @react-navigation/native-stack`
+- [x] Native Stack Navigator: `npm install @react-navigation/native-stack` ?? Conferir
+- [x] React Navigation: `npm install @react-navigation/native`
 
 - [x] Rodando: `npx expo start` ou `npx expo start --tunnel`
 
+- [x] atualaizar expo:
+- `npm uninstall expo-cli`
+- `npm install expo-cli`
+- `npm install expo@latest`
+- `npm install expo@51`
+- `npx expo install --fix`
 
-React Navigation:
-npm install @react-navigation/native
 
 ## 2. Estruturando os aqruivos:
 

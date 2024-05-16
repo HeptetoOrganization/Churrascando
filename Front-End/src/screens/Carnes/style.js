@@ -42,8 +42,28 @@ export const stylesMeatOptions= StyleSheet.create({
     container: {
         display: 'flex',
         flexDirection: 'row',
-        gap: 20,
+        alignItems: 'center',
+        //gap: 20,
     },
+})
+export const stylesCheckbox = StyleSheet.create({
+    container: {
+        display: 'flex',
+        gap: -20,
+    },
+})
+export const stylesCheckItem = StyleSheet.create({
+    container: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: -15,
+    },
+    text: {
+        fontFamily: theme.font_family.regular,
+        fontSize: theme.font_size.md,
+        color: theme.colors.chinese_black,
+    }
 })
 
 

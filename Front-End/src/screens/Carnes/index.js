@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from 'react';
-
-//import { Loading } from '../../components/Loading';
+import { useState } from 'react';
 
 import { 
   Text, 
@@ -18,7 +16,10 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ChevronRight } from 'lucide-react-native';
 
 import * as S from './style.js'
+import { theme } from '../../theme/index.js';
 import IconItem from '../../components/IconItem/index.js';
+import { Checkbox } from 'react-native-paper';
+
 
 const MeatScreen = ({navigation}) => {
 
@@ -27,6 +28,16 @@ const MeatScreen = ({navigation}) => {
         frango: require('../../assets/frango.png'),
         porco: require('../../assets/porco.png')
     }
+
+    // Escolha de carnes
+    const [carne, setCarne] = useState([]);
+    const handleCheckboxPress = (value) => {
+        if (carne.includes(value)) {
+          setCarne(carne.filter(item => item !== value));
+        } else {
+          setCarne([...carne, value]);
+        }
+      };
 
     return (
         <SafeAreaProvider style={S.stylesMeatScreen.container}>
@@ -45,21 +56,111 @@ const MeatScreen = ({navigation}) => {
 
                         {/* Bovina */}
                         <View style={S.stylesMeatOptions.container}>
-                            <IconItem src={images.boi}/>
-                            <Text style={S.stylesField.title}>Op</Text>
+                            <IconItem src={images.boi}/>       
+                            {/* Checkbox carnes */}
+                            <View style={S.stylesCheckbox.container}>
+                                <View style={S.stylesCheckItem.container}>
+                                    <Checkbox.Item
+                                        // label="Picanha"
+                                        status={carne.includes('Picanha') ? 'checked' : 'unchecked'}
+                                        onPress={() => handleCheckboxPress('Picanha')}
+                                        color={theme.colors.marquis_orange}
+                                    />
+                                    <Text style={S.stylesCheckItem.text}>Picanha</Text>
+                                </View>
+                                <View style={S.stylesCheckItem.container}>
+                                    <Checkbox.Item
+                                        // label="Contra Filé"
+                                        status={carne.includes('Contra Filé') ? 'checked' : 'unchecked'}
+                                        onPress={() => handleCheckboxPress('Contra Filé')}
+                                        color={theme.colors.marquis_orange}
+                                    />
+                                    <Text style={S.stylesCheckItem.text}>Contra Filé</Text>
+                                </View>
+                                <View style={S.stylesCheckItem.container}>
+                                    <Checkbox.Item
+                                        // label="Coxão Mole"
+                                        status={carne.includes('Coxão Mole') ? 'checked' : 'unchecked'}
+                                        onPress={() => handleCheckboxPress('Coxão Mole')}
+                                        color={theme.colors.marquis_orange}
+                                    />
+                                    <Text style={S.stylesCheckItem.text}>Coxão Mole</Text>
+                                </View>
+                            </View>
                         </View>
 
                         {/* Frango */}
                         <View style={S.stylesMeatOptions.container}>
                             <IconItem src={images.frango}/>
-                            <Text style={S.stylesField.title}>Op</Text>
+                            {/* Checkbox carnes */}
+                            <View style={S.stylesCheckbox.container}>
+                                <View style={S.stylesCheckItem.container}>
+                                    <Checkbox.Item
+                                        // label="Asa"
+                                        status={carne.includes('Asa') ? 'checked' : 'unchecked'}
+                                        onPress={() => handleCheckboxPress('Asa')}
+                                        color={theme.colors.marquis_orange}
+                                    />
+                                    <Text style={S.stylesCheckItem.text}>Asa</Text>
+                                </View>
+                                <View style={S.stylesCheckItem.container}>
+                                    <Checkbox.Item
+                                        // label="Coxa"
+                                        status={carne.includes('Coxa') ? 'checked' : 'unchecked'}
+                                        onPress={() => handleCheckboxPress('Coxa')}
+                                        color={theme.colors.marquis_orange}
+                                    />
+                                    <Text style={S.stylesCheckItem.text}>Coxa</Text>
+                                </View>
+                                <View style={S.stylesCheckItem.container}>
+                                    <Checkbox.Item
+                                        // label="Coração"
+                                        status={carne.includes('Coração') ? 'checked' : 'unchecked'}
+                                        onPress={() => handleCheckboxPress('Coração')}
+                                        color={theme.colors.marquis_orange}
+                                    />
+                                    <Text style={S.stylesCheckItem.text}>Coração</Text>
+                                </View>
+                            </View>
                         </View>
 
                         {/* Suína */}
                         <View style={S.stylesMeatOptions.container}>
                             <IconItem src={images.porco}/>
-                            <Text style={S.stylesField.title}>Op</Text>
+                            {/* Checkbox carnes */}
+                            <View style={S.stylesCheckbox.container}>
+                                <View style={S.stylesCheckItem.container}>
+                                    <Checkbox.Item
+                                        // label="Linguiça"
+                                        status={carne.includes('Linguiça') ? 'checked' : 'unchecked'}
+                                        onPress={() => handleCheckboxPress('Linguiça')}
+                                        color={theme.colors.marquis_orange}
+                                    />
+                                    <Text style={S.stylesCheckItem.text}>Linguiça</Text>
+                                </View>
+                                <View style={S.stylesCheckItem.container}>
+                                    <Checkbox.Item
+                                        // label="Bisteca"
+                                        status={carne.includes('Bisteca') ? 'checked' : 'unchecked'}
+                                        onPress={() => handleCheckboxPress('Bisteca')}
+                                        color={theme.colors.marquis_orange}
+                                    />
+                                    <Text style={S.stylesCheckItem.text}>Bisteca</Text>
+                                </View>
+                                <View style={S.stylesCheckItem.container}>
+                                    <Checkbox.Item
+                                        // label="Costela"
+                                        status={carne.includes('Costela') ? 'checked' : 'unchecked'}
+                                        onPress={() => handleCheckboxPress('Costela')}
+                                        color={theme.colors.marquis_orange}
+                                    />
+                                    <Text style={S.stylesCheckItem.text}>Costela</Text>
+                                </View>
+                            </View>
                         </View>
+
+
+                        {/* <Text>Selecionados: {carne.join(', ')}</Text> */}
 
                     </View>
                 </View>

@@ -62,43 +62,54 @@ const ResultsScreen = () => {
             {/* Tipo de carne */}
             <View style={S.stylesField.container}>
                 <Text style={S.stylesField.title}>Tipo de carne:</Text>
-                <ResultItem width={'35%'} value={'pessoas bebem?'} src={source.agua}/>
+                <ResultItem width={'35%'} value={'Boi'} src={source.boi}/>
+                <ResultItem width={'35%'} value={'Frango'} src={source.frango}/>
+                <ResultItem width={'35%'} value={'Porco'} src={source.porco}/>
             </View>
 
             {/* Acompanhamentos: */}
             <View style={S.stylesField.container}>
                 <Text style={S.stylesField.title}>Acompanhamentos:</Text>
-                <ResultItem width={'35%'} value={'Quantas pessoas bebem?'}/>
+                <ResultItem width={'35%'} value={'Pão de Alho'} src={source.pao_alho}/>
+                <ResultItem width={'35%'} value={'Pão Francês'} src={source.pao_frances}/>
+                <ResultItem width={'35%'} value={'Farofa'} src={source.farofa}/>
+                <ResultItem width={'35%'} value={'Queijo Coalho'} src={source.queijo_coalho}/>
+                <ResultItem width={'35%'} value={'Arroz'} src={source.arroz}/>
+    
             </View>
 
             {/* Bebidas: */}
             <View style={S.stylesField.container}>
                 <Text style={S.stylesField.title}>Bebidas:</Text>
-                <ResultItem width={'35%'} value={'Quantas pessoas bebem?'}/>
+                <ResultItem width={'35%'} value={'Suco'}src={source.suco}/>
+                <ResultItem width={'35%'} value={'Água'}src={source.agua}/>
+                <ResultItem width={'35%'} value={'Refrigerante'}src={source.refri}/>
+                <ResultItem width={'35%'} value={'Cerveja'} src={source.cerveja}/>
+                
             </View>
 
             {/* Gelo: */}
             <View style={S.stylesField.container}>
                 <Text style={S.stylesField.title}>Gelo:</Text>
-                <ResultItem width={'35%'} value={'Quantas pessoas bebem?'}/>
+                <ResultItem width={'35%'} value={'Gelo'} src={source.gelo}/>
             </View>
 
             {/* Carvão: */}
             <View style={S.stylesField.container}>
                 <Text style={S.stylesField.title}>Carvão:</Text>
-                <ResultItem width={'35%'} value={'Quantas pessoas bebem?'}/>
+                <ResultItem width={'35%'} value={'Carvão'} src={source.carvao}/>
             </View>
 
             {/* Sal: */}
             <View style={S.stylesField.container}>
                 <Text style={S.stylesField.title}>Sal:</Text>
-                <ResultItem width={'35%'} value={'Quantas pessoas bebem?'}/>
+                <ResultItem width={'35%'} value={'Sal'} src={source.sal}/>
             </View>
 
             {/* Locação: */}
             <View style={S.stylesField.container}>
                 <Text style={S.stylesField.title}>Locação:</Text>
-                <ResultItem width={'35%'} value={'Quantas pessoas bebem?'}/>
+                <ResultItem width={'35%'} value={'Locação'} src={source.locacao}/>
             </View>
     
             </ScrollView>

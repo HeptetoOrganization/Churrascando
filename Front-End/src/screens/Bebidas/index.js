@@ -1,59 +1,57 @@
-import { 
-  Text, 
-  View, 
-  Pressable, // Botão Personalizado
-  ScrollView,
-  Alert,
-} from 'react-native';
-
+import React, { useState } from 'react';
+import { Text, View, Pressable, ScrollView } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-// inserção de área segura do dispositivo para Android e iOS.
-
-// Icon
+import { useNavigation } from '@react-navigation/native';
+import * as S from './style.js';
 import { ChevronRight } from 'lucide-react-native';
 
-import * as S from './style.js'
+const DrinksScreen = () => {
+  const navigation = useNavigation();
+  const [qtdBebem, setQtdBebem] = useState('');
 
-import SelectDrinks from '../../components/SelectDrinks';
-import OrganizerComponents from '../../components/OrganizerComponents/index.js';
+  const handleNextPress = () => {
+    navigation.navigate('Sides', {
+      qtdBebem: qtdBebem
+    });
+  };
 
-
-const DrinksScreen = ({navigation}) => {
-
-    const qtd_bebem = {}
-
-    return(
+  return (
     <SafeAreaProvider style={S.stylesDrinksScreen.container}>
-        <ScrollView>
-
+      <ScrollView>
         <View>
-            <Text style={S.stylesMainTitle.text}>Faça seu Cálculo</Text>
+          <Text style={S.stylesMainTitle.text}>Escolha as Bebidas</Text>
         </View>
 
+        {/* Seleção de Bebidas */}
         <View style={S.stylesOptions.container}>
-            <Text style={S.stylesOptions.title}>Bebidas:</Text>
-            <SelectDrinks/>
+          <Text style={S.stylesOptions.title}>Bebidas:</Text>
+          {/* Componente para selecionar bebidas */}
+          <SelectDrinks />
         </View>
 
-        {/* Organizador */}
+        {/* Bebidas Alcóolicas */}
         <View style={S.stylesField.container}>
-            <Text style={S.stylesField.title}>Bebidas Alcólicas:</Text>
-            <OrganizerComponents width={'35%'} text={'Quantas pessoas bebem?'} value={qtd_bebem} maxLen={4} inputMode={'numeric'}/>
+          <Text style={S.stylesField.title}>Bebidas Alcóolicas:</Text>
+          <OrganizerComponents
+            width={'35%'}
+            text={'Quantas pessoas bebem?'}
+            value={qtdBebem}
+            maxLen={4}
+            inputMode={'numeric'}
+            onChangeText={setQtdBebem}
+          />
         </View>
 
-        </ScrollView>
+      </ScrollView>
 
-        <View style={S.stylesViewNext.container}>
-            <Pressable style={S.stylesPressableNext.container}onPress={() => navigation.navigate('Acompanhamentos')}>
-                <Text style={S.stylesPressableNext.text}>
-                    <ChevronRight color="#fff" size={40} strokeWidth={2.0}/>
-                </Text>
-            </Pressable>
-        </View>
-
+      {/* Botão Próximo */}
+      <Pressable style={S.stylesViewNext.container} onPress={handleNextPress}>
+        <Text style={S.stylesPressableNext.text}>
+          <ChevronRight color="#fff" size={40} strokeWidth={2.0}/>
+        </Text>
+      </Pressable>
     </SafeAreaProvider>
-    )
-    
+  );
 }
 
-export default DrinksScreen
+export default DrinksScreen;

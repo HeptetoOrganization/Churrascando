@@ -1,105 +1,81 @@
-import React, { useState, useEffect } from 'react';
-
-//import { Loading } from '../../components/Loading';
-
-import { 
-  Text, 
-  View, 
-  ActivityIndicator, // spinner
-  TextInput, 
-  Pressable, // Botão Personalizado
-  Image,
-  FlatList,
-  ScrollView,
-  Alert,
-  Button,
-} from 'react-native';
-
-
+import React, { useState } from 'react';
+import { Text, View, Pressable, ScrollView } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-// inserção de área segura do dispositivo para Android e iOS.
-
-// Icon
-import { ChevronRight } from 'lucide-react-native';
-
-import * as S from './style.js'
+import * as S from './style'; // Corrigido o nome do arquivo de estilo
 import GuestComponent from '../../components/GuestComponent/index.js';
 import OrganizerComponents from '../../components/OrganizerComponents/index.js';
+import { ChevronRight } from 'lucide-react-native';
 
-const OrganizerScreen = ({navigation}) => {
+const OrganizerScreen = ({ navigation }) => {
+  const [organizador, setOrganizador] = useState('');
+  const [numHomens, setNumHomens] = useState('');
+  const [numMulheres, setNumMulheres] = useState('');
+  const [numCriancas, setNumCriancas] = useState('');
+  const [endereco, setEndereco] = useState({
+      logradouro: '',
+      numero: '',
+      bairro: '',
+      cidade: '',
+      uf: '',
+  });
+  const [valorLocacao, setValorLocacao] = useState('');
 
-  const organizador = {}
-  const endereco = {
-    logradouro: '',
-    numero: '',
-    bairro: '',
-    cidade: '',
-    uf: '',
-  }
-  const adultos = {
-    homens: '',
-    mulheres: '',
-  }
-  // const homens = {}
-  // const mulheres = {}
-  const criancas = {}
-  const locacao = {}
-
+  const handleNextPress = () => {
+      navigation.navigate('Carnes', {
+          organizador: organizador,
+          numHomens: numHomens,
+          numMulheres: numMulheres,
+          numCriancas: numCriancas,
+          endereco: endereco,
+          valorLocacao: valorLocacao
+      });
+  };
 
   const source = {
     mulher: require('../../assets/mulher.png'),
     homem: require('../../assets/homem.png'),
     criancas: require('../../assets/criancas.png'),
   }
-    return (
-    
-        <SafeAreaProvider style={S.stylesOrganizerScreen.container}>
-          <ScrollView>
 
-            <View>
-              <Text style={S.stylesMainTitle.text}>Faça seu Cálculo</Text>
-            </View>
+  return (
+    <SafeAreaProvider style={S.stylesOrganizerScreen.container}>
+      <ScrollView>
+        <View>
+          <Text style={S.stylesMainTitle.text}>Faça seu Cálculo</Text>
+        </View>
+        
+        {/* Organizador */}
+        <View style={S.stylesField.container}>
+          <Text style={S.stylesField.title}>{'Organizador(a):'}</Text>
+          <OrganizerComponents width={'51%'} text={'Quem irá organizar?'} value={organizador} maxLen={20} onChangeText={setOrganizador}/>
+        </View>
 
-            
-            {/* Organizador */}
-            <View style={S.stylesField.container}>
-              <Text style={S.stylesField.title}>{'Organizador(a):'}</Text>
-              <OrganizerComponents width={'51%'} text={'Quem irá organizar?'} value={organizador} maxLen={20}/>
-            </View>
+        {/* Convidados */}
+        <View style={S.stylesField.container}>
+          <Text style={S.stylesField.title}>Convidados:</Text>
+          <GuestComponent src={source.homem} text={'Qtd. de homens'} value={numHomens} maxLen={4} inputMode={'numeric'} onChangeText={setNumHomens} />
+          <GuestComponent src={source.mulher} text={'Qtd. de mulheres'} value={numMulheres} maxLen={4} inputMode={'numeric'} onChangeText={setNumMulheres} />
+          <GuestComponent src={source.criancas} text={'Qtd. de crianças'} value={numCriancas} maxLen={4} inputMode={'numeric'} onChangeText={setNumCriancas} />
+        </View>
 
-            {/* Convidados */}
-            <View style={S.stylesField.container}>
-              <Text style={S.stylesField.title}>Convidados:</Text>
-              <GuestComponent src={source.homem} text={'Qtd. de homens'} value={adultos.homens} maxLen={4} inputMode={'numeric'}/>
-              <GuestComponent src={source.mulher} text={'Qtd. de mulheres'} value={adultos.mulheres} maxLen={4} inputMode={'numeric'}/>
-              <GuestComponent src={source.criancas} text={'Qtd. de crianças'} value={criancas} maxLen={4} inputMode={'numeric'}/>
-            </View>
+        {/* Locação */}
+        <View style={S.stylesField.container}>
+          <Text style={S.stylesField.title}>Locação:</Text>
+          <OrganizerComponents width={'75%'} text={'Endereço:'} value={endereco.logradouro} onChangeText={logradouro => setEndereco({...endereco, logradouro})} />
+          <OrganizerComponents width={'50%'} text={'Número:'} value={endereco.numero} inputMode={'numeric'} onChangeText={numero => setEndereco({...endereco, numero})} />
+          <OrganizerComponents width={'50%'} text={'Bairro:'} value={endereco.bairro} onChangeText={bairro => setEndereco({...endereco, bairro})} />
+          <OrganizerComponents width={'50%'} text={'Cidade:'} value={endereco.cidade} onChangeText={cidade => setEndereco({...endereco, cidade})} />
+          <OrganizerComponents width={'25%'} text={'UF:'} value={endereco.uf} onChangeText={uf => setEndereco({...endereco, uf})} />
+          <OrganizerComponents width={'75%'} text={'Valor locação:'} value={valorLocacao} maxLen={10} inputMode={'numeric'} onChangeText={setValorLocacao} />
+        </View>
 
-            {/* Locação */}
-            <View style={S.stylesField.container}>
-              <Text style={S.stylesField.title}>Locação:</Text>
-              <OrganizerComponents width={'75%'} text={'Endereço:'} value={endereco.logradouro}/>
-              <OrganizerComponents width={'50%'} text={'Número:'} value={endereco.numero} inputMode={'numeric'}/>
-              <OrganizerComponents width={'50%'} text={'Bairro:'} value={endereco.bairro}/>
-              <OrganizerComponents width={'50%'} text={'Cidade:'} value={endereco.cidade}/>
-              <OrganizerComponents width={'30%'} text={'Estado:'} value={endereco.uf} maxLen={2} textTransform={'uppercase'}/>
-              <OrganizerComponents width={'35%'} text={'Valor de aluguel do espaço:'} value={locacao} inputMode={'decimal'}/>
-
-            </View>
-            
-          </ScrollView>
-
-          <View style={S.stylesViewNext.container}>
-            <Pressable style={S.stylesPressableNext.container}onPress={() => navigation.navigate('Carnes')}>
-              <Text style={S.stylesPressableNext.text}>
-                <ChevronRight color="#fff" size={40} strokeWidth={2.0}/>
-              </Text>
-            </Pressable>
-          </View>
-    
-        </SafeAreaProvider>
-    
-      );
+        <Pressable style={S.stylesViewNext.container} onPress={handleNextPress}>
+          <Text style={S.stylesViewNext.text}>Próximo</Text>
+          <ChevronRight size={18} />
+        </Pressable>
+      </ScrollView>
+    </SafeAreaProvider>
+  );
 }
 
-export default OrganizerScreen
+export default OrganizerScreen;

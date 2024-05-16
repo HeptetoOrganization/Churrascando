@@ -3,7 +3,7 @@ import { Text, View, Pressable, ScrollView } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import * as S from './style.js';
-import { ChevronRight } from 'lucide-react-native';
+import { ChevronRight, icons } from 'lucide-react-native';
 
 const MeatScreen = () => {
   const navigation = useNavigation();
@@ -51,7 +51,7 @@ const MeatScreen = () => {
         <View style={S.stylesField.container}>
           <Text style={S.stylesField.title}>Tipo de Carne:</Text>
           <View style={S.stylesMeats.container}>
-            <MeatOption src={images.boi} label="Picanha" />
+            <MeatOption src={icons.boi} label="Picanha" />
             <MeatOption src={images.boi} label="Contra Filé" />
             <MeatOption src={images.boi} label="Coxão Mole" />
             {/* Adicione mais opções conforme necessário */}

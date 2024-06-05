@@ -19,6 +19,8 @@ import ResultItem from '../../components/ResultItem/index.js';
 
 // const CalculadoraData = Calculadora
 const ResultsScreen = ({ route, navigation }) => {
+  
+
   const {
     carnesSelecionadas,
     bebidasSelecionadas,
@@ -30,6 +32,7 @@ const ResultsScreen = ({ route, navigation }) => {
     endereco,
     valorLocacao,
   } = route.params;
+
   const resultados = Calculadora({
     Homem: numHomens,
     Mulher: numMulheres,
@@ -123,8 +126,7 @@ const ResultsScreen = ({ route, navigation }) => {
           <ResultItem
             width={"35%"}
             value={`Queijo Coalho: ${
-              resultados.tQueijo?.toFixed(2) || "0.00"
-            } kg`}
+              resultados.tQueijo?.toFixed(2) || "0.00"} kg`}
             src={source.queijo_coalho}
           />
           <ResultItem

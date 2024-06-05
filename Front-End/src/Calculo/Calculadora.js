@@ -7,7 +7,7 @@ export default function Calculadora({
     Bebida,
     Outros,
     Locacao
-}) {
+}){
 
     /*  CARNES (Valores por kg)
                 BOVINA
@@ -134,7 +134,9 @@ export default function Calculadora({
             kgPorco += kgCarne
         }
         if ("Bisteca" == Carne[i]) {
-            valorTotalC += (kgCarne.toFixed(2) * 16, 98);
+            valorTotalC += (kgCarne)
+        if ("Bisteca" == Carne[i]) {
+            valorTotalC += (kgCarne.toFixed(2) * 16.98);
             kgPorco += kgCarne
         }
         if ("Costela" == Carne[i]) {
@@ -224,4 +226,4 @@ export default function Calculadora({
         tPaoAlho, 
         tQueijo
     }
-}
+}}

@@ -21,7 +21,7 @@ import IconItem from '../../components/IconItem/index.js';
 import { Checkbox } from 'react-native-paper';
 
 
-const MeatScreen = ({navigation}) => {
+const MeatScreen = ({navigation, route}) => {
 
     const images = {
         boi: require('../../assets/boi.png'),
@@ -38,6 +38,18 @@ const MeatScreen = ({navigation}) => {
           setCarne([...carne, value]);
         }
       };
+      const handleNextPress = () => {
+        navigation.navigate("Bebidas", {
+          carnesSelecionadas: carne,
+          organizador: route.params.organizador,
+          numHomens: route.params.numHomens,
+          numMulheres: route.params.numMulheres,
+          numCriancas: route.params.numCriancas,
+          endereco: route.params.endereco,
+          valorLocacao: route.params.valorLocacao,
+        });
+      };
+
 
     return (
         <SafeAreaProvider style={S.stylesMeatScreen.container}>
@@ -168,7 +180,7 @@ const MeatScreen = ({navigation}) => {
             </ScrollView>
 
             <View style={S.stylesViewNext.container}>
-                <Pressable style={S.stylesPressableNext.container}onPress={() => navigation.navigate('Bebidas')}>
+                <Pressable style={S.stylesPressableNext.container}onPress={handleNextPress}>
                     <Text style={S.stylesPressableNext.text}>
                         <ChevronRight color="#fff" size={40} strokeWidth={2.0}/>
                     </Text>
